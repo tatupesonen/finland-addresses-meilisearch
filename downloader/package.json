@@ -1,0 +1,20 @@
+{
+  "name": "finland-addresses-meilisearch",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node download.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csvtojson": "^2.0.10",
+    "glob-promise": "^4.2.2",
+    "meilisearch": "^0.25.0",
+    "node-7z": "^3.0.0",
+    "node-fetch": "^3.2.4"
+  }
+}

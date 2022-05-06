@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  meilisearch:
+    image: getmeili/meilisearch
+    env_file:
+      - .env
+    environment:
+      - MEILI_MASTER_KEY=${MEILI_MASTER_KEY}
+    ports:
+      - 7700:7700
+    volumes:
+      - ./data.ms/:/data.ms
+  downloader:
+    build: ./downloader
+    environment:
+      - MEILI_MASTER_KEY=${MEILI_MASTER_KEY}
+    volumes:
+      - ./archive:/archive
+  front:
+    build: ./meilisearch-frontend
+    volumes:
+      - "./meilisearch-frontend:/app"
+    environment:
+      - MEILI_MASTER_KEY=${MEILI_MASTER_KEY}
+    ports:
+      - 3000:3000
