@@ -35,7 +35,7 @@ const Home: NextPage = () => {
             {searchResult &&
               searchResult?.hits?.map((hit) => (
                 <ListItem>
-                  {hit.street} {hit.house_number}
+                  {hit.street} {hit.house_number} {hit.postal_code} {hit.municipality} {hit.region}
                 </ListItem>
               ))}
           </List>
